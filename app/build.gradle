@@ -28,7 +28,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'dev.project516.javaapitest.Main'
+    mainClass = 'dev.project516.CurrentTemperature.Main'
 }
 
 compileJava.dependsOn spotlessApply
@@ -45,7 +45,7 @@ spotless {
 jar {
     manifest {
         attributes(
-            'Main-Class': 'dev.project516.javaapitest.Main'
+            'Main-Class': 'dev.project516.CurrentTemperature.Main'
         )
     }
 }

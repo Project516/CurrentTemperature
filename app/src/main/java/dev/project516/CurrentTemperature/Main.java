@@ -1,4 +1,4 @@
-package dev.project516.javaapitest;
+package dev.project516.CurrentTemperature;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
