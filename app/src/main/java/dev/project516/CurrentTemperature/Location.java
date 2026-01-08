@@ -42,7 +42,7 @@ public class Location {
         return lat;
     }
 
-    double getlon() {
+    double getLon() {
         return lon;
     }
 

@@ -1,4 +1,4 @@
-package dev.project516.TUIJavaTest;
+package dev.project516.CurrentTemperature;
 
 import com.googlecode.lanterna.gui2.*;
 import com.googlecode.lanterna.screen.Screen;
@@ -10,6 +10,9 @@ import java.io.IOException;
 public class TUI {
 
     public TUI() throws IOException {
+
+        Location location = new Location();
+        Temperature temp = new Temperature(location.getLat(), location.getLon());
 
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         Screen screen = new TerminalScreen(terminal);
@@ -23,7 +26,9 @@ public class TUI {
         Panel contentPanel = new Panel();
         contentPanel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
 
-        contentPanel.addComponent(new Label("Temperature Fetcher"));
+        contentPanel.addComponent(
+                new Label(
+                        "It is currently " + temp.getTemp() + "°F in " + location.getCity() + "."));
 
         Button exitBtn =
                 new Button(
@@ -35,24 +40,6 @@ public class TUI {
                             }
                         });
 
-        Button newWindow =
-                new Button(
-                        "new window",
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                BasicWindow subWindow = new BasicWindow();
-
-                                Panel subPanel = new Panel();
-                                subPanel.addComponent(new Label("New Window"));
-
-                                subPanel.addComponent(new Button("Close", subWindow::close));
-                                subWindow.setComponent(subPanel);
-
-                                gui.addWindow(subWindow);
-                            }
-                        });
-        contentPanel.addComponent(newWindow);
         contentPanel.addComponent(exitBtn);
 
         window.setComponent(contentPanel);
