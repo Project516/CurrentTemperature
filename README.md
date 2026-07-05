@@ -80,13 +80,13 @@ app/
 
 ## Continuous integration
 
-- `.github/workflows/gradle.yml` &mdash; builds the project and submits the
+- `.github/workflows/gradle.yml`: builds the project and submits the
   dependency graph on every push and pull request to `master`.
-- `.github/workflows/release.yml` &mdash; builds the `app-all.jar` and uploads
+- `.github/workflows/release.yml`: builds the `app-all.jar` and uploads
   it as an asset whenever a GitHub release is created.
-- `.github/workflows/javadoc.yml` &mdash; generates Javadoc and deploys it to
+- `.github/workflows/javadoc.yml`: generates Javadoc and deploys it to
   GitHub Pages.
-- `.github/dependabot.yml` &mdash; weekly checks for Gradle and GitHub Actions
+- `.github/dependabot.yml`: weekly checks for Gradle and GitHub Actions
   dependency updates.
 
 ## Documentation
