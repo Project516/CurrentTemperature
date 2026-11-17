@@ -18,8 +18,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v6
         with:
-          distribution: 'temurin'
-          java-version: '25.0.5+8.0.LTS'
+          distribution: 'corretto'
+          java-version: '25.0.5.1.2'
 
       - name: Generate JavaDoc
         run: ./gradlew javadoc
